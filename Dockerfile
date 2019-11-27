@@ -25,9 +25,9 @@ ARG UID
 USER root
 
 # https://github.com/numpy/numpy/issues/11110#issuecomment-449852419
-RUN apt-get install -y git ffmpeg && \
-    apt-get install -y libatlas-base-dev && \
-    pip3 install git+https://github.com/3b1b/manim && \
-    pip3 install jupyter-manim
+RUN apt-get install -y git ffmpeg libatlas-base-dev
+
+RUN pip3 install git+https://github.com/3b1b/manim && \
+    pip3 install git+https://github.com/krassowski/jupyter-manim
 
 USER ${USER}
